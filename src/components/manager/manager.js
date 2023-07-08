@@ -1,6 +1,6 @@
 const uuid = require("uuid");
 const { faker } = require("@faker-js/faker");
-const airLineEvents = require("../../events");
+const airLineEvents = require("../../events.singleton");
 
 /*-------------------------------------------------------------------*/
 // function: schedual a flight ==> and emitt the new flight with the flight details

@@ -1,24 +1,17 @@
-const airLineEvents = require("../../events");
+const airLineEvents = require("../../events.singleton");
 
-// functions to handle the new flight event : take off and arrive ==> console somthing and emitt
+// functions to handle the new flight event
+// take off and arrive functions will be fired and ==>  emitt the event of taking off and arriving
 airLineEvents.on("newFlightEvent", TakeOff);
 airLineEvents.on("newFlightEvent", arrive);
 
 function TakeOff(flightDetails) {
   setTimeout(() => {
-    console.log(
-      `******************************************** 
-==> Pilot: Flight with ID '${flightDetails.flightID}' just took off to ${flightDetails.destination}`
-    );
     airLineEvents.emit("tookOffEvent", flightDetails);
   }, 4000);
 }
 function arrive(flightDetails) {
   setTimeout(() => {
-    console.log(
-      `********************************************
-==> Pilot: Flight with ID '${flightDetails.flightID}' just arrived to ${flightDetails.destination} `
-    );
     airLineEvents.emit("arrivedflightEvent", flightDetails);
   }, 7000);
 }
