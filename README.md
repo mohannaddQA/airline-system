@@ -10,3 +10,10 @@ this system will be created using <b>`Server side events.`<b>
 ## UML diagram
 
 ![UML diagram](./docs/images/UML.png)
+
+## Usage
+
+`1- make sure you have node.js istalled`<br>
+`2- clone the porject to your local machine `<br>
+`3- in the termenal open the project folder`<br>
+`4- to satrt the project, type `npm start `in the terminal`<br>
