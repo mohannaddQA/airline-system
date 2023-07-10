@@ -1,8 +1,9 @@
-const airLineEvents = require("../../events.singleton");
+const { createSystemConnection } = require("../index.clients");
+const systemConnection = createSystemConnection();
 
-airLineEvents.on("newFlightEvent", NewFlightLog);
-airLineEvents.on("tookOffEvent", tookOffLog);
-airLineEvents.on("arrivedflightEvent", arrivedflightLog);
+systemConnection.on("newFlightEvent", NewFlightLog);
+systemConnection.on("tookOffEvent", tookOffLog);
+systemConnection.on("arrivedflightEvent", arrivedflightLog);
 
 function NewFlightLog(flightDetails) {
   console.log(`***
@@ -20,10 +21,7 @@ pilotName: ${flightDetails.pilotName}
 
 function tookOffLog(flightDetails) {
   console.log(
-    `******************************************** 
-==> Pilot: Flight with ID '${flightDetails.flightID}' just took off to ${
-      flightDetails.destination
-    }
+    `
 ***
 Flight: {
 event: 'new flight'
@@ -39,10 +37,7 @@ pilotName: ${flightDetails.pilotName}
 
 function arrivedflightLog(flightDetails) {
   console.log(
-    `********************************************
-==> Pilot: Flight with ID '${flightDetails.flightID}' just arrived to ${
-      flightDetails.destination
-    }
+    `
 ***
 Flight: {
 event: 'new flight'
