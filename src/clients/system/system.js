@@ -24,7 +24,7 @@ function tookOffLog(flightDetails) {
     `
 ***
 Flight: {
-event: 'new flight'
+event: 'flight took off'
 time: ${new Date().toISOString()}
 Details: ${`
 flightID: ${flightDetails.flightID}
@@ -40,7 +40,7 @@ function arrivedflightLog(flightDetails) {
     `
 ***
 Flight: {
-event: 'new flight'
+event: 'flight arrive'
 time: ${new Date().toISOString()}
 Details: ${`
 flightID: ${flightDetails.flightID}
