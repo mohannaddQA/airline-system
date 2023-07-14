@@ -17,6 +17,16 @@ ioServer.on("connection", (socket) => {
   socket.on("arrivedflightEvent", (flightDetails) => {
     ioServer.emit("arrivedflightEvent", flightDetails);
   });
+  socket.on("getAllflights", () => {
+    ioServer.emit("getAllflights");
+  });
+  socket.on("sendAllFlights", (allflights) => {
+    ioServer.emit("sendAllFlights", allflights);
+  });
+
+  socket.on("delete", (flightID) => {
+    ioServer.emit("delete", flightID);
+  });
 });
 
 airlineSocet.on("connection", (socket) => {
